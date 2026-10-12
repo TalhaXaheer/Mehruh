@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "verify": "tsc --noEmit && eslint . && next build",
+    "test:e2e": "playwright test --grep-invert screenshots",
+    "shots": "playwright test shots.spec.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.9.1",
@@ -25,6 +28,7 @@
     "zod": "^4.6.5"
   },
   "devDependencies": {
+    "@playwright/test": "^1.64.0",
     "@tailwindcss/turbopack": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
