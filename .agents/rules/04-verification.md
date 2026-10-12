@@ -21,6 +21,12 @@ verify: PASS/FAIL   e2e: PASS/FAIL   screenshots: <paths>
 <items checked / not checked + why>
 ## Observations (NOT changed)
 <issues noticed outside scope>
+## Tracking
+Task ID: <ID>
+Status: <status> (<reason>)
+PROGRESS rows changed: <list of rows updated>
+New OBS/Q/FX rows: <new rows added or none>
+Next task: <ID>
 ## Open questions
 <anything needing the client/user>
 ```

@@ -1,6 +1,6 @@
 # MEHRUH — Architecture & Roadmap
 
-**Current phase:** Phase 0 (update this line as you progress)
+**Current phase:** see docs/PROGRESS.md (single source of truth)
 
 ## 1. Audit of the current build (from screenshots)
 | # | Problem | Fix lives in |

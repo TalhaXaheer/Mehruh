@@ -6,11 +6,13 @@ NOT: Shopify template, generic React template, "AI-looking" site.
 
 Read in this order before ANY task:
 1. `docs/PLAN.md`            – architecture + roadmap + current phase
-2. `docs/DESIGN_SYSTEM.md`   – tokens, type, spacing, motion (the only source of visual truth)
-3. `.agents/rules/*`          – hard rules (always on)
-4. The matching skill in `.agents/skills/*`
+2. `docs/SCOPE.md`           – project boundaries and decisions
+3. `docs/PROGRESS.md`        – roadmap tasks and current status
+4. `docs/DESIGN_SYSTEM.md`   – tokens, type, spacing, motion (the only source of visual truth)
+5. `.agents/rules/*`          – hard rules (always on)
+6. The matching skill in `.agents/skills/*`
 
-## The 7 non-negotiables
+## The 8 non-negotiables
 1. **Plan first, code second.** Post a short plan (files to touch, what will NOT change) and wait for approval on anything larger than a single-file fix.
 2. **Stay in scope.** Touch only files named in the task. No drive-by refactors, renames, reformatting, or "improvements".
 3. **No new dependencies** without asking. Check `package.json` first and use what exists.
@@ -18,6 +20,7 @@ Read in this order before ANY task:
 5. **Never invent brand facts.** Addresses, shipping promises, prices, notes, awards, locations are PLACEHOLDERS and must live in `src/content/` flagged `// TODO(client)`.
 6. **Never fake media.** No generated/stock substitutes for the client's video or photography. Use the specified path + a fallback.
 7. **Prove it.** A task is not done until `npm run verify` passes AND you attach screenshots at 375 / 768 / 1440 (see `visual-qa` skill). "Looks good" without evidence is a failed task.
+8. **Keep docs/PROGRESS.md truthful (rule 06).**
 
 ## Definition of Done (paste into every task report)
 - [ ] Only the agreed files changed (list them)
@@ -27,6 +30,7 @@ Read in this order before ANY task:
 - [ ] No console errors/warnings, no horizontal scroll, no layout shift on load
 - [ ] `prefers-reduced-motion` respected
 - [ ] Anything uncertain is listed under "Open questions", not silently guessed
+- [ ] docs/PROGRESS.md updated
 
 ## Framework notes (from original AGENTS.md)
 <!-- BEGIN:nextjs-agent-rules -->
