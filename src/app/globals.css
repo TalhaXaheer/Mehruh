@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+@theme {
+  --color-burgundy-primary: #4A1726;
+  --color-burgundy-deep: #2B0913;
+  --color-burgundy-dark: #1A050B;
+  --color-burgundy-wine: #380E1B;
+  --color-burgundy-glow: #5F1C30;
+  --color-burgundy-surface: #250912;
+
+  --color-gold-primary: #C5A15A;
+  --color-gold-light: #DFC285;
+  --color-gold-sheen: #F3E4C3;
+  --color-gold-antique: #A8833E;
+  --color-gold-dark: #876629;
+
+  --color-cream-primary: #F4EFE5;
+  --color-cream-soft: #FAF7F2;
+  --color-cream-parchment: #EBE3D3;
+  --color-cream-muted: #D5C9B5;
+  --color-cream-border: #E2D8C3;
+
+  --color-charcoal-primary: #171515;
+  --color-charcoal-deep: #0F0E0E;
+  --color-charcoal-surface: #1D1A1A;
+  --color-charcoal-card: #221F1F;
+
+  --color-forest-primary: #17251F;
+  --color-forest-deep: #0D1713;
+
+  --font-serif: var(--font-cormorant), "Cormorant Garamond", "Cinzel", Georgia, serif;
+  --font-sans: var(--font-inter), "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --letter-spacing-luxury: 0.28em;
+  --letter-spacing-editorial: 0.42em;
+}
+
+:root {
+  --background: #171515;
+  --foreground: #F4EFE5;
+  --mehruh-burgundy: #4A1726;
+  --mehruh-gold: #C5A15A;
+  --mehruh-cream: #F4EFE5;
+  --mehruh-charcoal: #171515;
+}
+
+/* Global resets for ultra-luxury presentation */
+html {
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #171515;
+  color: #F4EFE5;
+}
+
+body {
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+  background-color: #171515;
+  color: #F4EFE5;
+  min-height: 100vh;
+}
+
+/* Selection highlight in antique gold */
+::selection {
+  background-color: #4A1726;
+  color: #DFC285;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1A050B;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4A1726;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C5A15A;
+}
+
+/* Luxury Utilities */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #DFC285 0%, #C5A15A 50%, #9D7C37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gold-radiant {
+  background: linear-gradient(180deg, #F5E5C9 0%, #C5A15A 60%, #96742F 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #DFC285 0%, #C5A15A 50%, #9D7C37 100%);
+}
+
+.border-gold-subtle {
+  border-color: rgba(197, 161, 90, 0.28);
+}
+
+.border-gold-glow {
+  border-color: rgba(197, 161, 90, 0.45);
+  box-shadow: 0 0 15px rgba(197, 161, 90, 0.15);
+}
+
+.bg-burgundy-velvet {
+  background: radial-gradient(circle at 50% 30%, #4A1726 0%, #2B0913 60%, #171515 100%);
+}
+
+.hero-vignette {
+  background: radial-gradient(ellipse at center, rgba(43, 9, 19, 0.3) 0%, rgba(23, 21, 21, 0.85) 100%);
+}
+
+.frosted-glass-dark {
+  background: rgba(23, 21, 21, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(197, 161, 90, 0.16);
+}
+
+.frosted-glass-cream {
+  background: rgba(244, 239, 229, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(197, 161, 90, 0.25);
+}
