@@ -1,3 +1,5 @@
+> Every conversation starts by following .agents/rules/05-session-bootstrap.md.
+
 # MEHRUH — Agent Operating Manual
 
 MEHRUH is a luxury haute-perfumery brand site (Next.js + TypeScript + Tailwind).

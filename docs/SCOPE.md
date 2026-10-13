@@ -75,3 +75,4 @@ Every task must satisfy this checklist before being considered complete:
 | 2026-10-13 | Added GitHub connection and phase-end pushes | owner request | owner |
 | 2026-10-13 | Rule 07 added: push at end of every phase with tag | owner request | owner |
 | 2026-10-13 | Baseline test and lint cleanup | task A1 completion | owner |
+| 2026-10-13 | Added session-bootstrap rule 05 | task A2 completion | owner |
