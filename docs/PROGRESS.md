@@ -22,7 +22,7 @@
 | Phase | Name | Done | Total | Status | Pushed |
 |---|---|---|---|---|---|
 | Setup | Setup | 6 | 6 | DONE | phase-setup-complete |
-| A | Baseline & Bootstrap | 4 | 4 | DONE | - |
+| A | Baseline & Bootstrap | 4 | 4 | DONE | phase-a-complete |
 | 0 | Foundations | 0 | 6 | TODO | - |
 | 1 | Hero | 0 | 5 | TODO | - |
 | 2 | Story & Collection | 0 | 5 | TODO | - |
@@ -44,7 +44,7 @@
 | A1 | A | Baseline cleanup: lint errors, single h1, accessible cart drawer, strict tests | auto | T3 | DONE | 2026-10-13 | fix: baseline lint, single h1, accessible cart drawer, strict tests | aac0208 | verify PASS (12/12 e2e, 0 eslint err, build OK) | Strict assertions, single h1 on BrandLogo, CartDrawer focus trap |
 | A2 | A | Session bootstrap rule | auto | A1 | DONE | 2026-10-13 | chore: add session bootstrap rule | 87b0ac6 | tsc + progress:check PASS; build+e2e skipped (docs only) | Rule 05 created and linked from AGENTS.md |
 | A3 | A | Compliance test ("fix the hero") | visual | A2 | DONE | 2026-10-13 | docs: approve A3 | d6ab630 | compliance test passed: no edits, plan only, kit loaded | (manual by owner) |
-| A4 | A | Record decisions and placeholder config (PKR, Pakistan data) | auto | A3 | DONE | 2026-10-13 | feat: record decisions and placeholder config | - | verify PASS (tsc, eslint, build, progress:check) | Placeholders and formatPrice created |
+| A4 | A | Record decisions and placeholder config (PKR, Pakistan data) | auto | A3 | DONE | 2026-10-13 | feat: record decisions and placeholder config | 7703add | verify PASS (tsc, eslint, build, progress:check) | Placeholders and formatPrice created |
 | 0.1 | 0 | Design tokens (Tailwind v4 @theme) | visual | A4 | TODO | - | - | - | - | - |
 | 0.2 | 0 | Layout primitives (Container, Section, Eyebrow, Button, TextLink) | visual | 0.1 | TODO | - | - | - | - | - |
 | 0.3 | 0 | Transparent monogram (review only) | decision | 0.2 | TODO | - | - | - | - | needs asset from owner |
@@ -86,6 +86,7 @@
 ## Git push log
 | Date | Phase | Tag | Commit hash | Branch | Result | Notes |
 |---|---|---|---|---|---|---|
+| 2026-10-13 | A | phase-a-complete | 7703add | main | pushed | Phase A complete (A1, A2, A3, A4) |
 | 2026-10-13 | Setup | phase-setup-complete | 2ef59f8 | main | pushed | Phase Setup complete (I0, T1, T2, T3, G1, G2) |
 | 2026-10-13 | Setup (baseline) | setup-baseline | 4ccf4dd | main | pushed | first push |
 
@@ -113,6 +114,7 @@
 | Q-5 | Checkout path decision (deferred) | 5.4+ | client | open |
 
 ## Session log
+- **2026-10-13:** Phase A complete. Tagged phase-a-complete and pushed to origin. Commit "docs: phase A pushed".
 - **2026-10-13:** Task A4 completed. Created src/content/placeholders.ts and src/lib/format.ts with PKR currency config, formatPrice helper, and Pakistan salon placeholders. Phase A complete. Commit "feat: record decisions and placeholder config".
 - **2026-10-13:** Task A3 completed. Compliance test passed: rejected premature out-of-scope hero work, ran /plan-task, owner approved. Commit "docs: approve A3".
 - **2026-10-13:** Task A2 completed. Created .agents/rules/05-session-bootstrap.md and linked at top of AGENTS.md. Commit "chore: add session bootstrap rule".
