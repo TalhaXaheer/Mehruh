@@ -1,7 +1,7 @@
 **Current phase:** A
-**Next task:** A3
+**Next task:** A4
 **Last updated:** 2026-10-13
-**Done:** 8 / 47
+**Done:** 9 / 47
 
 ## Status key
 - **TODO:** Work is queued and not yet started.
@@ -22,7 +22,7 @@
 | Phase | Name | Done | Total | Status | Pushed |
 |---|---|---|---|---|---|
 | Setup | Setup | 6 | 6 | DONE | phase-setup-complete |
-| A | Baseline & Bootstrap | 2 | 4 | IN PROGRESS | - |
+| A | Baseline & Bootstrap | 3 | 4 | IN PROGRESS | - |
 | 0 | Foundations | 0 | 6 | TODO | - |
 | 1 | Hero | 0 | 5 | TODO | - |
 | 2 | Story & Collection | 0 | 5 | TODO | - |
@@ -42,8 +42,8 @@
 | G1 | Setup | Connect GitHub repository and first push | auto | T3 | DONE | 2026-10-13 | docs: progress G1 | 7d23c36 | git push OK; ls-remote matches HEAD; secret scan clean | https://github.com/TalhaXaheer/Mehruh; author corrected before first use |
 | G2 | Setup | Phase-end push rule, workflow and first phase tag | auto | G1 | DONE | 2026-10-13 | chore: add git and github rule | 2ef59f8 | tsc + progress:check PASS; build+e2e skipped (docs only) | Rule 07 and /phase-push workflow added |
 | A1 | A | Baseline cleanup: lint errors, single h1, accessible cart drawer, strict tests | auto | T3 | DONE | 2026-10-13 | fix: baseline lint, single h1, accessible cart drawer, strict tests | aac0208 | verify PASS (12/12 e2e, 0 eslint err, build OK) | Strict assertions, single h1 on BrandLogo, CartDrawer focus trap |
-| A2 | A | Session bootstrap rule | auto | A1 | DONE | 2026-10-13 | chore: add session bootstrap rule | - | tsc + progress:check PASS; build+e2e skipped (docs only) | Rule 05 created and linked from AGENTS.md |
-| A3 | A | Compliance test ("fix the hero") | visual | A2 | TODO | - | - | - | - | (manual by owner) |
+| A2 | A | Session bootstrap rule | auto | A1 | DONE | 2026-10-13 | chore: add session bootstrap rule | 87b0ac6 | tsc + progress:check PASS; build+e2e skipped (docs only) | Rule 05 created and linked from AGENTS.md |
+| A3 | A | Compliance test ("fix the hero") | visual | A2 | DONE | 2026-10-13 | docs: approve A3 | - | compliance test passed: no edits, plan only, kit loaded | (manual by owner) |
 | A4 | A | Record decisions and placeholder config (PKR, Pakistan data) | auto | A3 | TODO | - | - | - | - | - |
 | 0.1 | 0 | Design tokens (Tailwind v4 @theme) | visual | A4 | TODO | - | - | - | - | - |
 | 0.2 | 0 | Layout primitives (Container, Section, Eyebrow, Button, TextLink) | visual | 0.1 | TODO | - | - | - | - | - |
@@ -113,6 +113,7 @@
 | Q-5 | Checkout path decision (deferred) | 5.4+ | client | open |
 
 ## Session log
+- **2026-10-13:** Task A3 completed. Compliance test passed: rejected premature out-of-scope hero work, ran /plan-task, owner approved. Commit "docs: approve A3".
 - **2026-10-13:** Task A2 completed. Created .agents/rules/05-session-bootstrap.md and linked at top of AGENTS.md. Commit "chore: add session bootstrap rule".
 - **2026-10-13:** Task A1 completed. Fixed duplicate h1 via BrandLogo as prop, added CartDrawer focus trap and scroll lock, fixed ESLint errors, restored strict smoke assertions. Commit "fix: baseline lint, single h1, accessible cart drawer, strict tests".
 - **2026-10-13:** Phase Setup complete. Tagged phase-setup-complete and pushed to origin. Commit "docs: phase Setup pushed".
