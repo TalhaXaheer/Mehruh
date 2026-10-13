@@ -66,7 +66,7 @@ if (!tasksSectionMatch) {
 }
 
 const tasks = [];
-const idRegex = /^(I0|T\d+|A\d+|\d+\.\d+)$/;
+const idRegex = /^(I0|T\d+|G\d+|A\d+|\d+\.\d+)$/;
 
 if (tasksSectionMatch) {
   const lines = tasksSectionMatch[1].split(/\r?\n/);
