@@ -24,13 +24,13 @@ Read in this order before ANY task:
 
 ## Definition of Done (paste into every task report)
 - [ ] Only the agreed files changed (list them)
-- [ ] `npm run verify` green (typecheck + eslint + build)
+- [ ] `npm run verify` green (typecheck + eslint + build + progress:check)
 - [ ] `npm run test:e2e` green
 - [ ] Screenshots 375/768/1440 attached for every changed section
 - [ ] No console errors/warnings, no horizontal scroll, no layout shift on load
 - [ ] `prefers-reduced-motion` respected
 - [ ] Anything uncertain is listed under "Open questions", not silently guessed
-- [ ] docs/PROGRESS.md updated
+- [ ] docs/PROGRESS.md updated (`npm run progress:check` passes)
 
 ## Framework notes (from original AGENTS.md)
 <!-- BEGIN:nextjs-agent-rules -->

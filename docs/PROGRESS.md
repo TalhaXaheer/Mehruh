@@ -1,7 +1,7 @@
 **Current phase:** Setup
-**Next task:** T3
+**Next task:** A1
 **Last updated:** 2026-10-12
-**Done:** 3 / 45
+**Done:** 4 / 45
 
 ## Status key
 - **TODO:** Work is queued and not yet started.
@@ -21,7 +21,7 @@
 ## Phase summary
 | Phase | Name | Done | Total | Status |
 |---|---|---|---|---|
-| Setup | Setup | 3 | 4 | IN PROGRESS |
+| Setup | Setup | 4 | 4 | DONE |
 | A | Baseline & Bootstrap | 0 | 4 | TODO |
 | 0 | Foundations | 0 | 6 | TODO |
 | 1 | Hero | 0 | 5 | TODO |
@@ -37,8 +37,8 @@
 |---|---|---|---|---|---|---|---|---|---|---|
 | I0 | Setup | Install agent kit and verification tooling | auto | - | DONE | 2026-10-12 | chore: install MEHRUH agent kit and verification tooling | a52754f | tsc+build+e2e PASS; eslint had 7 pre-existing errors | Snapshot commit 658a6b7 before install |
 | T1 | Setup | Create SCOPE.md and PROGRESS.md | auto | I0 | DONE | 2026-10-12 | docs: add SCOPE and PROGRESS tracking | d4dc516 | - | - |
-| T2 | Setup | Add progress-tracking rule and update kit docs | auto | T1 | DONE | 2026-10-12 | chore: add progress tracking rule | - | docs only | - |
-| T3 | Setup | Progress check script wired into verify | auto | T2 | TODO | - | - | - | - | - |
+| T2 | Setup | Add progress-tracking rule and update kit docs | auto | T1 | DONE | 2026-10-12 | chore: add progress tracking rule | 4074c4b | docs only | - |
+| T3 | Setup | Progress check script wired into verify | auto | T2 | DONE | 2026-10-12 | chore: progress check script | - | progress:check OK; negative test caught 3/3 errors | - |
 | A1 | A | Baseline cleanup: lint errors, single h1, accessible cart drawer, strict tests | auto | T3 | TODO | - | - | - | - | - |
 | A2 | A | Session bootstrap rule | auto | A1 | TODO | - | - | - | - | - |
 | A3 | A | Compliance test ("fix the hero") | visual | A2 | TODO | - | - | - | - | (manual by owner) |
@@ -103,5 +103,6 @@
 | Q-5 | Checkout path decision (deferred) | 5.4+ | client | open |
 
 ## Session log
+- **2026-10-12:** Task T3 completed. Added progress check script (scripts/check-progress.mjs), wired into package.json verify gate, verified with positive and negative tests. Commit "chore: progress check script".
 - **2026-10-12:** Task T2 completed. Added progress-tracking rule 06 and updated kit governance docs. Commit "chore: add progress tracking rule".
 - **2026-10-12:** Tracking files created. Initialized SCOPE.md and PROGRESS.md master roadmap governance.
