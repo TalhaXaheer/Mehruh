@@ -28,8 +28,8 @@ test.describe('MEHRUH homepage smoke', () => {
   test('h1 and images have alt', async ({ page }) => {
     await page.goto('/');
     await skipIntro(page);
-    // Note: Homepage currently has 2 h1s (Hero and Footer); checking visibility while flagged for audit
-    await expect(page.locator('h1').first()).toBeVisible();
+    await expect(page.locator('h1')).toHaveCount(1);
+    await expect(page.locator('h1')).toBeVisible();
     const missingAlt = await page.locator('img:not([alt])').count();
     expect(missingAlt).toBe(0);
   });
@@ -57,9 +57,9 @@ test.describe('MEHRUH homepage smoke', () => {
     await page.goto('/');
     await skipIntro(page);
     await page.getByRole('button', { name: /cart|shopping bag/i }).first().click();
-    const drawer = page.locator('aside');
+    const drawer = page.getByRole('dialog');
     await expect(drawer).toBeVisible();
-    await page.getByRole('button', { name: /close bag/i }).first().click();
+    await page.keyboard.press('Escape');
     await expect(drawer).toBeHidden();
   });
 
@@ -67,6 +67,6 @@ test.describe('MEHRUH homepage smoke', () => {
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto('/');
     await skipIntro(page);
-    await expect(page.locator('h1').first()).toBeVisible();
+    await expect(page.locator('h1')).toBeVisible();
   });
 });

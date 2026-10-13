@@ -34,6 +34,7 @@ export function BrandIntro({
 
   // Check storage and reduced-motion preference on client mount
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- Synchronous client-mount state required to prevent flash and preserve intro sequence timing
     setMounted(true);
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
     setPrefersReducedMotion(mediaQuery.matches);

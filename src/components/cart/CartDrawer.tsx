@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { useCart } from "@/context/CartContext";
 import { X, Plus, Minus, Trash2, ShieldCheck, Sparkles, ArrowRight } from "lucide-react";
@@ -17,6 +17,63 @@ export function CartDrawer() {
     totalQuantity,
   } = useCart();
   const [isCheckingOut, setIsCheckingOut] = useState(false);
+  const drawerRef = useRef<HTMLElement | null>(null);
+  const closeButtonRef = useRef<HTMLButtonElement | null>(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const previouslyFocused = document.activeElement as HTMLElement | null;
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    const originalOverflow = document.body.style.overflow;
+    const originalPaddingRight = document.body.style.paddingRight;
+
+    document.body.style.overflow = "hidden";
+    if (scrollbarWidth > 0) {
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+    }
+
+    closeButtonRef.current?.focus();
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        closeCart();
+        return;
+      }
+
+      if (e.key === "Tab" && drawerRef.current) {
+        const focusableElements = drawerRef.current.querySelectorAll<HTMLElement>(
+          'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        );
+        if (focusableElements.length === 0) return;
+
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        if (e.shiftKey) {
+          if (document.activeElement === firstElement) {
+            e.preventDefault();
+            lastElement.focus();
+          }
+        } else {
+          if (document.activeElement === lastElement) {
+            e.preventDefault();
+            firstElement.focus();
+          }
+        }
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = originalOverflow;
+      document.body.style.paddingRight = originalPaddingRight;
+      previouslyFocused?.focus?.();
+    };
+  }, [isOpen, closeCart]);
 
   if (!isOpen) return null;
 
@@ -63,18 +120,26 @@ export function CartDrawer() {
       />
 
       <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
-        <aside className="w-screen max-w-md bg-[#171515] border-l border-[#C5A15A]/30 flex flex-col shadow-2xl text-[#F4EFE5]">
+        <aside
+          ref={drawerRef}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Shopping bag"
+          aria-labelledby="cart-drawer-title"
+          className="w-screen max-w-md bg-[#171515] border-l border-[#C5A15A]/30 flex flex-col shadow-2xl text-[#F4EFE5]"
+        >
           {/* Header */}
           <div className="p-6 border-b border-[#C5A15A]/20 flex items-center justify-between bg-[#1D1A1A]">
             <div className="flex flex-col">
               <span className="text-[10px] tracking-[0.3em] uppercase text-[#C5A15A]">
                 THE FLACON CHEST
               </span>
-              <h2 className="text-xl font-serif tracking-[0.1em] text-[#DFC285]">
+              <h2 id="cart-drawer-title" className="text-xl font-serif tracking-[0.1em] text-[#DFC285]">
                 YOUR SELECTION ({totalQuantity})
               </h2>
             </div>
             <button
+              ref={closeButtonRef}
               onClick={closeCart}
               className="text-[#D5C9B5] hover:text-white p-2 rounded-full hover:bg-white/5 transition-colors"
               aria-label="Close bag"

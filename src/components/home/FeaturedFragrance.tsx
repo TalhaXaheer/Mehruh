@@ -130,7 +130,7 @@ export function FeaturedFragrance() {
                 {featured.options.map((opt) => (
                   <button
                     key={opt.size}
-                    onClick={() => setSelectedSize(opt.size as any)}
+                    onClick={() => setSelectedSize(opt.size as "50ml" | "100ml")}
                     className={`px-4 py-1.5 text-xs font-sans tracking-[0.2em] uppercase rounded-[2px] transition-all cursor-pointer ${
                       selectedSize === opt.size
                         ? "bg-[#C5A15A] text-[#120F10] font-medium"

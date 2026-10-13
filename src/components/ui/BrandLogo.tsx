@@ -8,6 +8,7 @@ interface BrandLogoProps {
   theme?: "dark" | "cream";
   size?: "sm" | "md" | "lg";
   className?: string;
+  as?: "h1" | "p";
 }
 
 export function BrandLogo({
@@ -15,6 +16,7 @@ export function BrandLogo({
   theme = "dark",
   size = "md",
   className,
+  as = "h1",
 }: BrandLogoProps) {
   const isDark = theme === "dark";
 
@@ -54,6 +56,7 @@ export function BrandLogo({
   }
 
   if (variant === "stacked") {
+    const HeadingTag = as;
     return (
       <div
         className={cn(
@@ -62,7 +65,7 @@ export function BrandLogo({
         )}
       >
         <Emblem size={size === "lg" ? "xl" : "lg"} glow={isDark} />
-        <h1
+        <HeadingTag
           className={cn(
             "font-serif tracking-[0.38em] uppercase font-light mt-4 text-[#DFC285]",
             size === "sm" && "text-2xl",
@@ -72,7 +75,7 @@ export function BrandLogo({
           )}
         >
           MEHRUH
-        </h1>
+        </HeadingTag>
         <p
           className={cn(
             "font-sans uppercase text-[10px] md:text-xs tracking-[0.34em] mt-2",

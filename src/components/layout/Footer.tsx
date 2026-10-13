@@ -11,7 +11,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-6 sm:px-10 md:px-14">
         {/* Top Brand Statement */}
         <div className="flex flex-col items-center text-center pb-16 border-b border-[#C5A15A]/15">
-          <BrandLogo variant="stacked" theme="dark" size="md" />
+          <BrandLogo variant="stacked" theme="dark" size="md" as="p" />
         </div>
 
         {/* 4 Clean Editorial Columns */}

@@ -1,6 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { stripe } from "@/lib/checkout";
 
+interface CheckoutItem {
+  name: string;
+  size: string;
+  amount: number;
+  quantity: number;
+}
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
@@ -11,7 +18,7 @@ export async function POST(req: NextRequest) {
     }
 
     if (stripe) {
-      const lineItems = items.map((item: any) => ({
+      const lineItems = items.map((item: CheckoutItem) => ({
         price_data: {
           currency: "usd",
           product_data: {
@@ -40,10 +47,11 @@ export async function POST(req: NextRequest) {
       url: null,
       message: "Order simulation ready. Stripe test key can be set in .env.local.",
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Stripe Checkout Error:", error);
+    const message = error instanceof Error ? error.message : "Failed to initiate checkout";
     return NextResponse.json(
-      { error: error.message || "Failed to initiate checkout" },
+      { error: message },
       { status: 500 }
     );
   }

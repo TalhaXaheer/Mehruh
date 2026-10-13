@@ -28,6 +28,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- Hydrate cart items from localStorage on initial client mount
     setIsMounted(true);
     try {
       const saved = localStorage.getItem(CART_STORAGE_KEY);

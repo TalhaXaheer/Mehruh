@@ -7,14 +7,19 @@ import { useCart } from "@/context/CartContext";
 import { cn } from "@/lib/utils";
 import { ShoppingBag, Menu, X, ArrowUpRight } from "lucide-react";
 
+const emptySubscribe = () => () => {};
+
 export function Navbar() {
-  const [mounted, setMounted] = useState(false);
+  const mounted = React.useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false
+  );
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { totalQuantity, openCart } = useCart();
 
   useEffect(() => {
-    setMounted(true);
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
