@@ -22,6 +22,7 @@ AT THE END (CLOSE) of every task, in the SAME commit as the work:
 8. If you created or resolved an asset dependency, update the asset status in SCOPE.md and the Q-n rows.
 9. Add one line to "Session log" (newest first): date, task ID, outcome, commit message.
 10. Bug fixes and quick fixes outside the task list go to "Fix log" as FX-n, not into the task table.
+11. If this task completes its phase (every task of the phase is DONE), run the /phase-push workflow (rule 07). If this task ended as REVIEW, do not push; the push happens when the owner approves it.
 
 HARD RULES:
 - Never mark DONE when verify or e2e failed.

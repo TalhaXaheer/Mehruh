@@ -27,6 +27,9 @@ Status: <status> (<reason>)
 PROGRESS rows changed: <list of rows updated>
 New OBS/Q/FX rows: <new rows added or none>
 Next task: <ID>
+## Git
+branch: <branch>   last commit hash: <hash>   phase push: YES/NO   tag: <tag or none>
+remote verification: <git ls-remote & status result>
 ## Open questions
 <anything needing the client/user>
 ```

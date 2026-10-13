@@ -1,7 +1,7 @@
 **Current phase:** Setup
-**Next task:** G2
+**Next task:** A1
 **Last updated:** 2026-10-13
-**Done:** 5 / 47
+**Done:** 6 / 47
 
 ## Status key
 - **TODO:** Work is queued and not yet started.
@@ -21,7 +21,7 @@
 ## Phase summary
 | Phase | Name | Done | Total | Status | Pushed |
 |---|---|---|---|---|---|
-| Setup | Setup | 5 | 6 | IN PROGRESS | baseline |
+| Setup | Setup | 6 | 6 | DONE | baseline |
 | A | Baseline & Bootstrap | 0 | 4 | TODO | - |
 | 0 | Foundations | 0 | 6 | TODO | - |
 | 1 | Hero | 0 | 5 | TODO | - |
@@ -39,8 +39,8 @@
 | T1 | Setup | Create SCOPE.md and PROGRESS.md | auto | I0 | DONE | 2026-10-12 | docs: add SCOPE and PROGRESS tracking | d4dc516 | - | - |
 | T2 | Setup | Add progress-tracking rule and update kit docs | auto | T1 | DONE | 2026-10-12 | chore: add progress tracking rule | 4074c4b | docs only | - |
 | T3 | Setup | Progress check script wired into verify | auto | T2 | DONE | 2026-10-12 | chore: progress check script | 2e06c60 | progress:check OK; negative test caught 3/3 errors | - |
-| G1 | Setup | Connect GitHub repository and first push | auto | T3 | DONE | 2026-10-13 | docs: progress G1 | - | git push OK; ls-remote matches HEAD; secret scan clean | https://github.com/TalhaXaheer/Mehruh; author corrected before first use |
-| G2 | Setup | Phase-end push rule, workflow and first phase tag | auto | G1 | TODO | - | - | - | - | - |
+| G1 | Setup | Connect GitHub repository and first push | auto | T3 | DONE | 2026-10-13 | docs: progress G1 | 7d23c36 | git push OK; ls-remote matches HEAD; secret scan clean | https://github.com/TalhaXaheer/Mehruh; author corrected before first use |
+| G2 | Setup | Phase-end push rule, workflow and first phase tag | auto | G1 | DONE | 2026-10-13 | chore: add git and github rule | - | tsc + progress:check PASS; build+e2e skipped (docs only) | Rule 07 and /phase-push workflow added |
 | A1 | A | Baseline cleanup: lint errors, single h1, accessible cart drawer, strict tests | auto | T3 | TODO | - | - | - | - | - |
 | A2 | A | Session bootstrap rule | auto | A1 | TODO | - | - | - | - | - |
 | A3 | A | Compliance test ("fix the hero") | visual | A2 | TODO | - | - | - | - | (manual by owner) |
@@ -112,6 +112,7 @@
 | Q-5 | Checkout path decision (deferred) | 5.4+ | client | open |
 
 ## Session log
+- **2026-10-13:** Task G2 completed. Added Rule 07 (.agents/rules/07-git-and-github.md), /phase-push workflow, updated AGENTS.md, rules 04 and 06, and SCOPE.md. Commit "chore: add git and github rule".
 - **2026-10-13:** Task G1 completed. Connected to GitHub remote https://github.com/TalhaXaheer/Mehruh, author corrected to TalhaXaheer on baseline commit 4ccf4dd, pushed main and setup-baseline tag. Commit "docs: progress G1".
 - **2026-10-12:** Task T3 completed. Added progress check script (scripts/check-progress.mjs), wired into package.json verify gate, verified with positive and negative tests. Commit "chore: progress check script".
 - **2026-10-12:** Task T2 completed. Added progress-tracking rule 06 and updated kit governance docs. Commit "chore: add progress tracking rule".

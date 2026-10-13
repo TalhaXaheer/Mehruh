@@ -10,9 +10,10 @@ Read in this order before ANY task:
 3. `docs/PROGRESS.md`        – roadmap tasks and current status
 4. `docs/DESIGN_SYSTEM.md`   – tokens, type, spacing, motion (the only source of visual truth)
 5. `.agents/rules/*`          – hard rules (always on)
-6. The matching skill in `.agents/skills/*`
+6. `.agents/rules/07-git-and-github.md` – git hygiene and phase-end push protocol
+7. The matching skill in `.agents/skills/*`
 
-## The 8 non-negotiables
+## The 9 non-negotiables
 1. **Plan first, code second.** Post a short plan (files to touch, what will NOT change) and wait for approval on anything larger than a single-file fix.
 2. **Stay in scope.** Touch only files named in the task. No drive-by refactors, renames, reformatting, or "improvements".
 3. **No new dependencies** without asking. Check `package.json` first and use what exists.
@@ -21,6 +22,7 @@ Read in this order before ANY task:
 6. **Never fake media.** No generated/stock substitutes for the client's video or photography. Use the specified path + a fallback.
 7. **Prove it.** A task is not done until `npm run verify` passes AND you attach screenshots at 375 / 768 / 1440 (see `visual-qa` skill). "Looks good" without evidence is a failed task.
 8. **Keep docs/PROGRESS.md truthful (rule 06).**
+9. **Push to GitHub only at the end of a completed phase, following rule 07. Never force-push.**
 
 ## Definition of Done (paste into every task report)
 - [ ] Only the agreed files changed (list them)
