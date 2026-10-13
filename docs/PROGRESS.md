@@ -1,7 +1,7 @@
 **Current phase:** Setup
-**Next task:** A1
-**Last updated:** 2026-10-12
-**Done:** 4 / 45
+**Next task:** G2
+**Last updated:** 2026-10-13
+**Done:** 5 / 47
 
 ## Status key
 - **TODO:** Work is queued and not yet started.
@@ -19,18 +19,18 @@
 - Historical task rows are permanent records and must never be rewritten or modified retroactively.
 
 ## Phase summary
-| Phase | Name | Done | Total | Status |
-|---|---|---|---|---|
-| Setup | Setup | 4 | 4 | DONE |
-| A | Baseline & Bootstrap | 0 | 4 | TODO |
-| 0 | Foundations | 0 | 6 | TODO |
-| 1 | Hero | 0 | 5 | TODO |
-| 2 | Story & Collection | 0 | 5 | TODO |
-| 3 | Editorial & Atmosphere | 0 | 4 | TODO |
-| 4 | Motion & Polish | 0 | 3 | TODO |
-| 5 | Commerce | 0 | 4 | TODO |
-| 6 | Subpages | 0 | 4 | TODO |
-| 7 | Release Hardening | 0 | 6 | TODO |
+| Phase | Name | Done | Total | Status | Pushed |
+|---|---|---|---|---|---|
+| Setup | Setup | 5 | 6 | IN PROGRESS | baseline |
+| A | Baseline & Bootstrap | 0 | 4 | TODO | - |
+| 0 | Foundations | 0 | 6 | TODO | - |
+| 1 | Hero | 0 | 5 | TODO | - |
+| 2 | Story & Collection | 0 | 5 | TODO | - |
+| 3 | Editorial & Atmosphere | 0 | 4 | TODO | - |
+| 4 | Motion & Polish | 0 | 3 | TODO | - |
+| 5 | Commerce | 0 | 4 | TODO | - |
+| 6 | Subpages | 0 | 4 | TODO | - |
+| 7 | Release Hardening | 0 | 6 | TODO | - |
 
 ## Tasks
 | ID | Phase | Task | Gate | Depends | Status | Updated | Commit message | Hash | Verify | Notes |
@@ -38,7 +38,9 @@
 | I0 | Setup | Install agent kit and verification tooling | auto | - | DONE | 2026-10-12 | chore: install MEHRUH agent kit and verification tooling | a52754f | tsc+build+e2e PASS; eslint had 7 pre-existing errors | Snapshot commit 658a6b7 before install |
 | T1 | Setup | Create SCOPE.md and PROGRESS.md | auto | I0 | DONE | 2026-10-12 | docs: add SCOPE and PROGRESS tracking | d4dc516 | - | - |
 | T2 | Setup | Add progress-tracking rule and update kit docs | auto | T1 | DONE | 2026-10-12 | chore: add progress tracking rule | 4074c4b | docs only | - |
-| T3 | Setup | Progress check script wired into verify | auto | T2 | DONE | 2026-10-12 | chore: progress check script | - | progress:check OK; negative test caught 3/3 errors | - |
+| T3 | Setup | Progress check script wired into verify | auto | T2 | DONE | 2026-10-12 | chore: progress check script | 2e06c60 | progress:check OK; negative test caught 3/3 errors | - |
+| G1 | Setup | Connect GitHub repository and first push | auto | T3 | DONE | 2026-10-13 | docs: progress G1 | - | git push OK; ls-remote matches HEAD; secret scan clean | https://github.com/TalhaXaheer/Mehruh; author corrected before first use |
+| G2 | Setup | Phase-end push rule, workflow and first phase tag | auto | G1 | TODO | - | - | - | - | - |
 | A1 | A | Baseline cleanup: lint errors, single h1, accessible cart drawer, strict tests | auto | T3 | TODO | - | - | - | - | - |
 | A2 | A | Session bootstrap rule | auto | A1 | TODO | - | - | - | - | - |
 | A3 | A | Compliance test ("fix the hero") | visual | A2 | TODO | - | - | - | - | (manual by owner) |
@@ -81,6 +83,11 @@
 | 7.5 | 7 | Pre-release clean-up | auto | 7.4 | TODO | - | - | - | - | - |
 | 7.6 | 7 | Final acceptance review | decision | 7.5 | TODO | - | - | - | - | - |
 
+## Git push log
+| Date | Phase | Tag | Commit hash | Branch | Result | Notes |
+|---|---|---|---|---|---|---|
+| 2026-10-13 | Setup (baseline) | setup-baseline | 4ccf4dd | main | pushed | first push |
+
 ## Fix log
 | ID | Date | Description | Files | Commit message | Hash |
 |---|---|---|---|---|---|
@@ -92,6 +99,8 @@
 | OBS-2 | review | Story image is low resolution and contains baked-in text | med | open | 2.1 |
 | OBS-3 | review | Footer contains invented claims (London/Dubai addresses, insured dispatch) | med | planned | 3.4 |
 | OBS-4 | review | Prices shown in USD; must be PKR | med | planned | 2.3 |
+| OBS-5 | G1 | Existing Stripe checkout code although checkout is deferred in scope. | med | open | 5.4 |
+| OBS-6 | G1 | Existing auth (src/actions/auth.ts) and Prisma schema/DATABASE_URL although accounts, backend and database are out of scope. Decide: keep, hide or remove. | med | open | 5.1 |
 
 ## Blockers and open questions
 | ID | Question | Needed by task | Owner | Status |
@@ -103,6 +112,7 @@
 | Q-5 | Checkout path decision (deferred) | 5.4+ | client | open |
 
 ## Session log
+- **2026-10-13:** Task G1 completed. Connected to GitHub remote https://github.com/TalhaXaheer/Mehruh, author corrected to TalhaXaheer on baseline commit 4ccf4dd, pushed main and setup-baseline tag. Commit "docs: progress G1".
 - **2026-10-12:** Task T3 completed. Added progress check script (scripts/check-progress.mjs), wired into package.json verify gate, verified with positive and negative tests. Commit "chore: progress check script".
 - **2026-10-12:** Task T2 completed. Added progress-tracking rule 06 and updated kit governance docs. Commit "chore: add progress tracking rule".
 - **2026-10-12:** Tracking files created. Initialized SCOPE.md and PROGRESS.md master roadmap governance.

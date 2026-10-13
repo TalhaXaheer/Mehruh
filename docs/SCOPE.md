@@ -22,6 +22,7 @@ MEHRUH is a luxury haute-perfumery website: luxury perfume campaign + cinematic 
 - [ ] **S-04:** Dedicated subpages: `/collection`, `/collection/[slug]`, `/our-story`, `/journal`, `/journal/[slug]`, `/privacy`, `/terms`, `/shipping`, `/contact`, `/faq`, `/care`, and `404`
 - [ ] **S-05:** Client-side persisted cart, Pakistani Rupee (PKR) pricing, and strictly typed product data model
 - [ ] **S-06:** SEO/metadata, full accessibility compliance, performance optimization, and release hardening
+- [ ] **S-07:** GitHub: remote https://github.com/TalhaXaheer/Mehruh, branch main, push at the end of every phase
 
 ## 4. Out of Scope
 - [ ] **O-01:** Live checkout and payment processing (deferred; decision pending in task 5.4)
@@ -33,6 +34,7 @@ MEHRUH is a luxury haute-perfumery website: luxury perfume campaign + cinematic 
 - [ ] **O-07:** Formal legal review / certified legal counsel copy
 - [ ] **O-08:** Physical boutique / stockist interactive store locator
 - [ ] **O-09:** Customer reviews and star rating submission systems
+- [ ] **O-10:** Existing auth/Prisma/Stripe code found in repo; not extended until decided.
 
 ## 5. Decisions
 | ID | Decision | Date | Status |
@@ -70,3 +72,4 @@ Every task must satisfy this checklist before being considered complete:
 | Date | Change | Reason | Approved by |
 |---|---|---|---|
 | 2026-10-12 | Initial scope created | Project governance baseline establishment | owner |
+| 2026-10-13 | Added GitHub connection and phase-end pushes | owner request | owner |
